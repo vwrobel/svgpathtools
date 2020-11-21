@@ -239,10 +239,11 @@ def scale(curve, sx, sy=None, origin=0j):
     else:
         isy = 1j*sy
 
+    print("here")
     def _scale(z):
         if sy is None:
-            return round(sx*z.real,5) + round(sx*z.imag,5)*1j   
-        return round(sx*z.real,5) + round(sy*z.imag,5)*1j       
+            return round(sx*z.real,2) + round(sx*z.imag,2)*1j   
+        return round(sx*z.real,2) + round(sy*z.imag,2)*1j       
 
     def scale_bezier(bez):
         p = [_scale(c) for c in bez2poly(bez)]
