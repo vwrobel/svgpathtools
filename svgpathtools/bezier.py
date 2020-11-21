@@ -114,6 +114,8 @@ def polynomial2bezier(poly):
     else:
         raise AssertionError("This function is only implemented for linear, "
                              "quadratic, and cubic polynomials.")
+    for i in range(len(bpoints)):
+        bpoints[i] = round(bpoints[i], 4)
     return bpoints
 
 
