@@ -114,9 +114,11 @@ def polynomial2bezier(poly):
     else:
         raise AssertionError("This function is only implemented for linear, "
                              "quadratic, and cubic polynomials.")
+    rbpoints = []
     for i in range(len(bpoints)):
         z = bpoints[i]
-        bpoints[i] = round(z.real, 4) + round(z.imag, 4)*1j
+        rbpoints.append(round(z.real, 4) + round(z.imag, 4)*1j)
+    bpoints = tuple(rbpoints)
     return bpoints
 
 
